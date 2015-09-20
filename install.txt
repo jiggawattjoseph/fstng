@@ -1,0 +1,41 @@
+Copyright 2015  Joseph Bengtson  (email : joseph@abilitymultimedia.com)
+
+Plugin Name: Fantasy Sports Team Name Generator
+Plugin URI: http://www.abilitymultimedia.com/fstng
+Description: Generates random fantasy sports team names
+Version: 1.0
+Author: Joseph Bengtson
+Author URI: http://www.abilitymultimedia.com
+
+License: 
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+Installation:
+Upload the .zip file named FSTNG to using the "Add New" -> "Upload Plugin" buttons on the Plugins page of the Wordpress Dashboard.  Be sure to 'activate' the plugin after it has been uploaded.
+
+Shortcode:
+To add the FSTNG plugin to a page, copy the shortcode '[display_formFields][display_formData]' to the page content, using the 'text' view.
+
+Updating Adjectives & Nouns:
+The lists of terms are hardcoded into the plugin file 'fstng.php'.  Using the Wordpress editor available under the Plugins page, click the 'edit' link for the Fantasy Sports Team Name Generator.  You will find the list of terms under the function display_formData().
+
+Each list is encoded within a PHP array, for example: mascotName = Array ("Lions", "Tigers", "Bears");
+
+You can add as many terms to the array as you like, as long as they formated correctly. In other words, each terms should be enclosed in quotes and followed by a comma. All values within the array must be enclosed in parathesis and followed by a semi-colon.
+
+When you are finished, be sure to click the 'Update File' button.
+
+Updating the user interface:
+The user interface is hardcoded into the plugin file 'fstng.php'.  Using the Wordpress editor available under the Plugins page, click the 'edit' link for the Fantasy Sports Team Name Generator.  You will find the list of terms under the function display_formFields().
+
+The user interface is written in HTML as a table, and the PHP command 'echo' is used to output the code into Wordpress.  Each line of HTML is written as a string, and can be easily updated using the HTML code for a table. Here is an example:
+	echo ("<tr><td><input type='radio' name='RadioGroup1' value='cityName' id='RadioGroup1_3'></td><td>Non-pro City Names</td>");
+	echo ("<td><input type='radio' name='RadioGroup2' value='charlieNouns' id='RadioGroup2_3'></td><td>Charlie Manuel Terms</td></tr>");
+
+By changing the value='[array name]' field, you can change which list of terms will be displayed by that option. Don't forget to update both columns of the HTML table if you add a row.  DO NOT USE DOUBLE "QUOTES" WITHIN THE ECHO STATEMENT, ONLY USE SINGLE 'QUOTES'. This will cause the line of code to prematurely terminate the line of HTML.
+
+When you are finished, be sure to click the 'Update File' button.
