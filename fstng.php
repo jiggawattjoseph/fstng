@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Fantasy Sports Team Name Generator
-Plugin URI: http://www.abilitymultimedia.com/fstng
+Plugin URI: https://github.com/jiggawattjoseph/fstng
 Description: Generates random fantasy sports team names
 Version: 1.0
 Author: Joseph Bengtson
