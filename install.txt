@@ -18,24 +18,19 @@ Installation:
 Upload the .zip file named FSTNG to using the "Add New" -> "Upload Plugin" buttons on the Plugins page of the Wordpress Dashboard.  Be sure to 'activate' the plugin after it has been uploaded.
 
 Shortcode:
-To add the FSTNG plugin to a page, copy the shortcode '[display_formFields][display_formData]' to the page content, using the 'text' view.
+To add the FSTNG plugin to a page, use the FSTNG Settings page on the WP Dashboard to access the shortcode configuration menu.  Use the checkboxes to select categories of adjectives and nouns to display on the page.  You can select different options to be displayed on different pages, which allows you to create random name generators for different sports.  We recommended that you choose an equal number of adjectives and nouns to be displayed on any given instance.  
+ 
+After making your category selections from the menu, hit the submit button, and a ‘script’ consisting of several blocks of shortcode will be displayed in the output box to the right.
+ 
+Copy and paste the shortcode blocks into the page content, using the 'text' view. For example: 
 
-Updating Adjectives & Nouns:
-The lists of terms are hardcoded into the plugin file 'fstng.php'.  Using the Wordpress editor available under the Plugins page, click the 'edit' link for the Fantasy Sports Team Name Generator.  You will find the list of terms under the function display_formData().
+	[display_formFieldsTop] 
+	[fstng_adj_00] [fstng_adj_01] [fstng_adj_02] [fstng_adj_03]
+	[display_formFieldsMid] 
+	[fstng_noun_00] [fstng_noun_02] [fstng_noun_04] [fstng_noun_05]
+	[display_formFieldsEnd][display_formData]
 
-Each list is encoded within a PHP array, for example: mascotName = Array ("Lions", "Tigers", "Bears");
+Once you have copied the shortcode to your page, ‘Save Changes’ and then ‘View Page’ to confirm that the shortcode changes have taken effect. 
 
-You can add as many terms to the array as you like, as long as they formated correctly. In other words, each terms should be enclosed in quotes and followed by a comma. All values within the array must be enclosed in parathesis and followed by a semi-colon.
-
-When you are finished, be sure to click the 'Update File' button.
-
-Updating the user interface:
-The user interface is hardcoded into the plugin file 'fstng.php'.  Using the Wordpress editor available under the Plugins page, click the 'edit' link for the Fantasy Sports Team Name Generator.  You will find the list of terms under the function display_formFields().
-
-The user interface is written in HTML as a table, and the PHP command 'echo' is used to output the code into Wordpress.  Each line of HTML is written as a string, and can be easily updated using the HTML code for a table. Here is an example:
-	echo ("<tr><td><input type='radio' name='RadioGroup1' value='cityName' id='RadioGroup1_3'></td><td>Non-pro City Names</td>");
-	echo ("<td><input type='radio' name='RadioGroup2' value='charlieNouns' id='RadioGroup2_3'></td><td>Charlie Manuel Terms</td></tr>");
-
-By changing the value='[array name]' field, you can change which list of terms will be displayed by that option. Don't forget to update both columns of the HTML table if you add a row.  DO NOT USE DOUBLE "QUOTES" WITHIN THE ECHO STATEMENT, ONLY USE SINGLE 'QUOTES'. This will cause the line of code to prematurely terminate the line of HTML.
-
-When you are finished, be sure to click the 'Update File' button.
+Updating Adjectives & Nouns:  
+Update the categories and the lists of terms using the FSTNG Settings panel in the WP Dashboard.  For each category, enter a Category Name and then input a list of terms for that category.  The each term in the list must be separated from the others by a comma (,) but quotation marks are unnecessary. When you are finished updating the categories, be sure to click the 'Save Changes' button.
