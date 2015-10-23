@@ -4,7 +4,7 @@
 Plugin Name: Fantasy Sports Team Name Generator
 Plugin URI: https://github.com/jiggawattjoseph/fstng
 Description: Generates random fantasy sports team names
-Version: 1.1
+Version: 1.2
 Author: Joseph Bengtson
 Author URI: http://www.abilitymultimedia.com
 */
@@ -454,9 +454,7 @@ add_shortcode('fstng_noun_09', 'fstng_noun_09');
 
 // Functions used to configure the shortcode with blocks of HTML output
 function display_formFieldsTop() { 	
-	echo ("<form action='" . bloginfo('url') . "/?page_id=" . get_the_ID());
-	echo ("' method='post' name='FSTNG'>");
-	echo ("<input type='hidden' name='page_id' value='" . get_the_ID() . "'>");
+	echo ("<form action='" . (esc_attr($_SERVER['REQUEST_URI'])) . "' method='post'>");
 	echo ("<table width='600' border='0'><tr valign='top'><td>Choose one adjective:");
 	echo ("<table width='100%' border='0'>");
 }
